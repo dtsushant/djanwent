@@ -1,0 +1,14 @@
+<h1>being rendered from the auto view</h1>
+
+{% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            {% comment %}<li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>{% endcomment %}
+            {% comment %}<li><a href="{% url 'detail' question.id %}">{{ question.question_text }} </a></li>{% endcomment %}
+            <li><a href="{% url 'polls:detail2' question.id %}">{{ question.question_text }} </a></li>
+
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
